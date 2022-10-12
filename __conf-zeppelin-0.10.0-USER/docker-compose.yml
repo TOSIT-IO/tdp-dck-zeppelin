@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  "sandbox":
+     image: "zeppelin:0.10.0-tdp-v0"
+     ports:
+       - "8181:8181"
+     volumes:
+       - "./sandbox/conf:/opt/zeppelin/conf"
+       - "./sandbox/conf-nginx:/etc/nginx/"
+       - "./sandbox/data:/data"
+       - "./sandbox/notebook:/persisted_notebook"
+       - "./sandbox/keytabs:/etc/security/keytabs"
+     container_name: zeppelin_0.10.0_tdp_USER

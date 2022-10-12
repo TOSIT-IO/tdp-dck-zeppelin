@@ -1,0 +1,98 @@
+{
+  "paragraphs": [
+    {
+      "text": "%livy2_perso.conf\nzeppelin.livy.principal tdp_user@REALM.TDP\nzeppelin.livy.keytab /etc/security/keytabs/tdp_user.keytab\nlivy.spark.yarn.queue default",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-12 08:16:27.889",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "text",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/text",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1644753357732_724791034",
+      "id": "paragraph_1644753357732_724791034",
+      "dateCreated": "2022-02-13 11:55:57.732",
+      "dateStarted": "2022-10-12 08:16:27.900",
+      "dateFinished": "2022-10-12 08:16:27.904",
+      "status": "FINISHED"
+    },
+    {
+      "text": "sc\nsc.version\nsc.getConf.getAll.foreach(println)",
+      "user": "anonymous",
+      "dateUpdated": "2022-10-12 08:16:27.992",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12.0,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "res0: org.apache.spark.SparkContext \u003d org.apache.spark.SparkContext@22d36077\nres1: String \u003d 2.3.5-TDP-0.1.0-SNAPSHOT\n(spark.driver.host,worker-03.tdp)\n(spark.eventLog.enabled,true)\n(spark.dynamicAllocation.enabled,false)\n(spark.sql.hive.metastore.jars,/opt/tdp/hive/lib/*)\n(spark.submit.deployMode,cluster)\n(spark.datasource.hive.warehouse.metastoreUri,thrift://master-03.tdp:9083)\n(spark.org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter.param.PROXY_URI_BASES,https://master-01.tdp:8090/proxy/application_1665558013354_0003,https://master-02.tdp:8090/proxy/application_1665558013354_0003)\n(spark.yarn.submit.waitAppCompletion,false)\n(spark.repl.class.uri,spark://worker-03.tdp:34528/classes)\n(spark.yarn.app.id,application_1665558013354_0003)\n(spark.submit.pyFiles,file:/opt/tdp/spark/python/lib/pyspark.zip,file:/opt/tdp/spark/python/lib/py4j-0.10.7-src.zip)\n(spark.executorEnv.PYTHONPATH,{{PWD}}/pyspark.zip\u003cCPS\u003e{{PWD}}/py4j-0.10.7-src.zip)\n(spark.driver.port,34528)\n(spark.yarn.maxAppAttempts,1)\n(spark.yarn.dist.archives,)\n(spark.hadoop.hive.zookeeper.quorum,master-01.tdp:2181,master-02.tdp:2181,master-03.tdp:2181)\n(spark.yarn.historyServer.address,master-03.tdp:18081)\n(spark.ui.filters,org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter)\n(spark.eventLog.dir,hdfs://mycluster/spark-logs)\n(spark.yarn.dist.jars,file:///opt/tdp/livy/rsc-jars/asm-5.0.4.jar,file:///opt/tdp/livy/rsc-jars/minlog-1.3.0.jar,file:///opt/tdp/livy/rsc-jars/reflectasm-1.11.3.jar,file:///opt/tdp/livy/rsc-jars/objenesis-2.5.1.jar,file:///opt/tdp/livy/rsc-jars/livy-api-0.8.0-incubating-TDP-0.1.0-SNAPSHOT.jar,file:///opt/tdp/livy/rsc-jars/netty-all-4.1.17.Final.jar,file:///opt/tdp/livy/rsc-jars/livy-rsc-0.8.0-incubating-TDP-0.1.0-SNAPSHOT.jar,file:///opt/tdp/livy/repl_2.11-jars/livy-core_2.11-0.8.0-incubating-TDP-0.1.0-SNAPSHOT.jar,file:///opt/tdp/livy/repl_2.11-jars/livy-repl_2.11-0.8.0-incubating-TDP-0.1.0-SNAPSHOT.jar,file:///opt/tdp/livy/repl_2.11-jars/commons-codec-1.9.jar)\n(spark.sql.catalogImplementation,in-memory)\n(spark.hadoop.yarn.timeline-service.enabled,false)\n(spark.app.id,application_1665558013354_0003)\n(spark.yarn.queue,default)\n(spark.executor.id,driver)\n(spark.app.name,livy-session-0)\n(spark.repl.class.outputDir,/data/yarn/local/usercache/tdp_user/appcache/application_1665558013354_0003/container_e08_1665558013354_0003_01_000001/tmp/spark1139976251052079483)\n(spark.yarn.app.container.log.dir,/data/yarn/logs/application_1665558013354_0003/container_e08_1665558013354_0003_01_000001)\n(spark.master,yarn)\n(spark.ui.port,0)\n(spark.livy.spark_major_version,2)\n(spark.ui.view.acls,spark)\n(spark.yarn.secondary.jars,asm-5.0.4.jar,minlog-1.3.0.jar,reflectasm-1.11.3.jar,objenesis-2.5.1.jar,livy-api-0.8.0-incubating-TDP-0.1.0-SNAPSHOT.jar,netty-all-4.1.17.Final.jar,livy-rsc-0.8.0-incubating-TDP-0.1.0-SNAPSHOT.jar,livy-core_2.11-0.8.0-incubating-TDP-0.1.0-SNAPSHOT.jar,livy-repl_2.11-0.8.0-incubating-TDP-0.1.0-SNAPSHOT.jar,commons-codec-1.9.jar)\n(spark.yarn.isPython,true)\n(spark.acls.enable,true)\n(spark.org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter.param.PROXY_HOSTS,master-01.tdp,master-02.tdp)\n(spark.yarn.tags,livy-session-0-PuBP1YPI)"
+          },
+          {
+            "type": "HTML",
+            "data": "\u003chr/\u003eSpark Application Id: null\u003cbr/\u003eSpark WebUI: \u003ca href\u003d\"null\"\u003enull\u003c/a\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1644753367201_746919459",
+      "id": "paragraph_1644753367201_746919459",
+      "dateCreated": "2022-02-13 11:56:07.201",
+      "dateStarted": "2022-10-12 08:16:27.997",
+      "dateFinished": "2022-10-12 08:18:05.983",
+      "status": "FINISHED"
+    }
+  ],
+  "name": "Untitled Note 1",
+  "id": "2GUU97TCZ",
+  "defaultInterpreterGroup": "livy2_perso",
+  "version": "0.10.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {
+    "isRunning": true
+  }
+}
