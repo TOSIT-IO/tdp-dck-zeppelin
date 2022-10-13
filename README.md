@@ -4,21 +4,22 @@
 
 Get Hadoop, hive, hbase and spark2 confs (didn't include spark 3 for the moment)
 ```bash
+CURRENT_BASE_DIR=$(echo $PWD)
 cd ../tdp-getting-started
-vagrant scp edge-01.tdp:/etc/hadoop/conf/* ../tdp-dck-zeppelin/files/hadoop/
-vagrant scp edge-01.tdp:/etc/hbase/conf/* ../tdp-dck-zeppelin/files/hbase/
-vagrant scp edge-01.tdp:/etc/hive/conf/* ../tdp-dck-zeppelin/files/hive/
-vagrant scp edge-01.tdp:/etc/spark/conf/* ../tdp-dck-zeppelin/files/spark/
+vagrant scp edge-01.tdp:/etc/hadoop/conf/* ${CURRENT_BASE_DIR}/files/hadoop/
+vagrant scp edge-01.tdp:/etc/hbase/conf/* ${CURRENT_BASE_DIR}/files/hbase/
+vagrant scp edge-01.tdp:/etc/hive/conf/* ${CURRENT_BASE_DIR}/files/hive/
+vagrant scp edge-01.tdp:/etc/spark/conf/* ${CURRENT_BASE_DIR}/files/spark/
 ```
 Get the hosts and kerberos files of your TDP cluster
 ```bash
-vagrant scp edge-01.tdp:/etc/hosts ../tdp-dck-zeppelin/files/hosts
-vagrant scp edge-01.tdp:/etc/krb5.conf ../tdp-dck-zeppelin/files/krb5.conf
-vagrant scp edge-01.tdp:/home/tdp_user/tdp_user.keytab ../tdp-dck-zeppelin/__conf-zeppelin-0.10.0-USER/sandbox/keytabs/tdp_user.keytab
+vagrant scp edge-01.tdp:/etc/hosts ${CURRENT_BASE_DIR}/files/hosts
+vagrant scp edge-01.tdp:/etc/krb5.conf ${CURRENT_BASE_DIR}/files/krb5.conf
+vagrant scp edge-01.tdp:/home/tdp_user/tdp_user.keytab ${CURRENT_BASE_DIR}/__conf-zeppelin-0.10.0-USER/sandbox/keytabs/tdp_user.keytab
 ```
 Create a tarball:
 ```bash
-cd ../tdp-dck-zeppelin/files
+cd ${CURRENT_BASE_DIR}/files
 tar cvzf clients-config.tar.gz hadoop hbase hive spark
 ```
 
@@ -34,6 +35,7 @@ livy.rsc.server.connect.timeout=200s
 ## Build this Zeppelin Docker image ##
 
 ```bash
+cd ${CURRENT_BASE_DIR}
 ./build-zeppelin-for-tdp.sh
 ```
 
@@ -43,6 +45,10 @@ livy.rsc.server.connect.timeout=200s
 cd __conf-zeppelin-0.10.0-USER/sandbox/
 docker-compose up -d
 ```
+
+## Open zeppelin ##
+
+https://localhost:8181
 
 ## Test ##
 
