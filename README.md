@@ -13,6 +13,7 @@ vagrant scp edge-01.tdp:/etc/spark/conf/* ${CURRENT_BASE_DIR}/files/spark/
 ```
 Get the hosts and kerberos files of your TDP cluster
 ```bash
+vagrant scp edge-01.tdp:/etc/ssl/certs/truststore.jks ${CURRENT_BASE_DIR}/files/truststore.jks
 vagrant scp edge-01.tdp:/etc/hosts ${CURRENT_BASE_DIR}/files/hosts
 vagrant scp edge-01.tdp:/etc/krb5.conf ${CURRENT_BASE_DIR}/files/krb5.conf
 vagrant scp edge-01.tdp:/home/tdp_user/tdp_user.keytab ${CURRENT_BASE_DIR}/__conf-zeppelin-0.10.0-USER/sandbox/keytabs/tdp_user.keytab
@@ -28,6 +29,8 @@ tar cvzf clients-config.tar.gz hadoop hbase hive spark
 Add these confs:
 
 ```bash
+[root@edge-01 ~]# vim /etc/livy/conf.server/livy.conf
+...
 livy.server.yarn.app-lookup-timeout=300s
 livy.rsc.server.connect.timeout=200s
 ```
